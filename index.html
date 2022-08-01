@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link href="./style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light mynav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><a class="nav-link active" aria-current="page" href="#"><div><img style="width:100%;height:50px" src="data:image/jpeg;base64,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"></div></a></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Address</a>
+              </li>
+              <li class="nav-item">
+          
+                <a class="nav-link" href="#">Sign In</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#">Cart</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#">Orders and Returns</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#">Cart</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            
+            </ul>
+            <form class="d-flex">
+                <select class="mx-1">
+                    <option value="All">All</option>
+                    <option value="Electronic">Electronics</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="FootWear">Footwear</option>
+                    <option value="Clothes">Clothes</option>
+                </select>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    
+
+
+
+
+<div class="container-fluid" style="background-color:black ;">
+    <div class="row w-100 mx-auto" style="width:100% ;">
+        <div class="col-12 secnavul">
+           <div class="innernav"><a href="#">All</a></div>
+           <div class="innernav"><a href="#">Best Sellers</a></div>
+           <div class="innernav"><a href="#">Customer Service</a></div>
+           <div class="innernav"><a href="#">Mobile</a></div>
+           <div class="innernav"><a href="#">Todays Deals</a></div>
+           <div class="innernav"><a href="#">Fashion</a></div>
+           <div class="innernav"><a href="#">Electronics</a></div>
+           <div class="innernav"><a href="#">Books</a></div>
+           <div class="innernav"><a href="#">Prime</a></div>
+           <div class="innernav imgnav"><img style="width:100%;height:2rem" src="data:image/jpeg;base64,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"></div>
+        </div>
+    </div>
+</div>
+<div class="blankdiv" style="width:100%;box-shadow:1px 1px 3px black ;text-align: center;">1 out of 100000 results of <span style="color:red;">Amazon</span></div>
+<div class="container-fluid ">
+    <div class="row ">
+        <div class="col-3  my-3">
+          <h5 class="mx-2" style="font-weight:700 ;font-size: 1rem;text-align: centre;">Department</h5>
+<ul class="leftlist" id="flist">
+    
+    <li>Gift Cards</li>
+    <li>Gift Vouchers</li>
+    <li>Echo Smart Speakers and displays</li>
+    <li>Mens's Clothing</li>
+    <li>Women's Clothing</li>
+    <li>Kid's Wear</li>
+    <li>Home Appliances/</li>
+    <li>TV Receivers</li>
+    <li>Men's Shoes</li>
+    <li><a href="#" style="text-decoration: none;color:Black">See More Items</a></li>
+</ul>
+
+
+<h6 style="font-weight:bold ;font-size:1rem ;">Avg. Customer Review</h6>
+<ul class="leftlist my-4t" id="slist">
+
+   
+<li>
+    <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>&nbsp; &up
+</li>
+<li>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span> &nbsp; &up
+    </li>
+</li>
+<li>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span> &nbsp; &up
+    </li>
+</li>
+<li>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span> &nbsp; &up
+    </li>
+</li>
+<li>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span> &nbsp; &up
+    </li>
+</li>
+</ul>
+
+<h6 style="font-weight:bold ; font-size:1rem ;">Gift Card Occasion</h6>
+<ul class="leftlist" id="thirdlist">
+    
+    <li><input type="checkbox"><label>&nbsp;Anniversary</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Apology</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Birthday</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Christmas</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Anniversary</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Congratulations</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Diwali</label> 
+    </li>
+    </li>
+   
+    <li><a href="#" style="text-decoration:none ;color:black">See More</a></li>
+
+    
+  
+</ul>
+
+<h6 style="font-weight:bold ;font-size: 1rem;">Gift Card Format</h6>
+<ul class="leftlist" id="fourthlist">
+    
+   
+    <li><a href="#" style="text-decoration:none ;color:black">eGiftCards</a></li>
+    <li><a href="#" style="text-decoration:none ;color:black">Physical GiftCards</a></li>
+</ul>
+
+<h6 style="font-weight:bold ;">Gift Card Recepient</h6>
+<ul class="leftlist" id="fifthlist">
+    
+    <li><input type="checkbox"><label>&nbsp;Boss</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Brother</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Colleague</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Daughter</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;For Her</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;For Him</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Friend</label> 
+    </li>
+    </li>
+   
+    <li><a href="#" style="text-decoration:none ;color:black">See More</a></li>
+
+    
+  
+</ul>
+
+<h6 style="font-weight:bold ;font-size:1rem;">Language</h6>
+<ul class="leftlist" id="sixthlist">
+    
+    <li><input type="checkbox"><label>&nbsp;American English</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Bengali</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Chinese</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;Danish</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;English-UK</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;French</label> 
+    </li>
+    <li><input type="checkbox"><label>&nbsp;German</label> 
+    </li>
+    
+    
+   
+    <li><a href="#" style="text-decoration:none ;color:black">See More</a></li>
+
+    
+  
+</ul>
+<h6 style="font-weight:bold ;font-size:1rem ;">Gift Card Theme</h6>
+<ul class="leftlist" id="seventhlist">
+
+    <li><input type="checkbox"><label>&nbsp;Amazon Gift Card</label></li>
+</ul>
+
+<h6 style="font-weight:bold ;font-size:1rem ;">Availability</h6>
+<ul class="leftlist" id="eightlist">
+  
+    <li><input type="checkbox"><label>&nbsp;Include Out Of Stock</label></li>
+</ul>
+        </div>
+        <div class="my-2 col-8" style="position:absolute;right:2rem">
+         <div class="container">
+          <div class="row">
+
+          <span style="font-size:large;margin:auto" >RESULTS</span>
+
+           <div class="col-lg-2 mx-auto">
+
+            <div class="card mx-auto" style="width: 12rem;">
+              <div>
+              <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+            </div>
+              <div class="card-body">
+                <p class="card-text">Amazon Cone Product.</p>
+                <small>Ships to USA</small>
+              </div>
+            </div>
+         
+           </div>
+
+
+           <div class="col-lg-2 mx-auto">
+
+            <div class="card mx-auto" style="width: 12rem;">
+              <div>
+                <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+  
+              </div>
+              <div class="card-body">
+                <p class="card-text">Amazon Cone Product.</p>
+                <small>Ships to USA</small>
+              </div>
+            </div>
+         
+           </div>
+           <div class="col-lg-2 mx-auto">
+
+            <div class="card mx-auto" style="width: 12rem;">
+              <div>
+                <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+  
+              </div>
+              <div class="card-body">
+                <p class="card-text">Amazon Cone Product.</p>
+                <small>Ships to USA</small>
+              </div>
+            </div>
+         
+           </div>
+           <div class="col-lg-2 mx-auto">
+
+            <div class="card mx-auto" style="width: 12rem;">
+              <div>
+                <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+  
+              </div>
+              <div class="card-body">
+                <p class="card-text">Amazon Cone Product.</p>
+                <small>Ships to USA</small>
+              </div>
+            </div>
+         
+           </div>
+
+
+
+
+
+
+<div class="row my-3 justify-content-centre" style="text-align:centre ;">
+
+<span style="font-size:larger ;">HIGHLY RATED</span>
+<small><strong>Sponsored|Based on star rating and number of customer ratings</strong></small>
+  <div class="col-lg-2 mx-auto my-2">
+  
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+      <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+    </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+</div>
+
+
+
+           
+
+
+
+          </div>
+
+
+
+
+<div class="row">
+<span styel="font-size:900;font-weight:bold;">MORE RESULTS</span>
+  <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+</div>
+
+
+
+
+<div class="row mx-auto my-3">
+
+
+  <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+</div>
+
+
+
+
+<div class="row mx-auto my-3">
+
+
+  <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+</div>
+
+
+
+
+
+<div class="row mx-auto my-3">
+
+
+  <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+</div>
+
+
+
+
+
+<div class="row mx-auto my-3">
+
+
+  <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+</div>
+
+
+
+
+
+<div class="row mx-auto my-3">
+
+
+  <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+</div>
+
+
+
+
+
+<div class="row mx-auto my-3">
+
+
+  <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+</div>
+
+
+
+
+<div class="row mx-auto my-3">
+
+
+  <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+</div>
+
+
+
+
+<div class="row mx-auto my-3">
+
+
+  <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+   <div class="col-lg-2 mx-auto my-2">
+
+    <div class="card mx-auto" style="width: 12rem;">
+      <div>
+        <img style="width:100%" src="https://m.media-amazon.com/images/I/812zvrq5x+L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="...">
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">Amazon Cone Product.</p>
+        <small>Ships to USA</small>
+      </div>
+    </div>
+ 
+   </div>
+
+
+</div>
+
+
+         </div>
+        
+
+        </div>
+
+    </div>
+
+   
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
